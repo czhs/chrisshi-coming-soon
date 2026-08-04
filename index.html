@@ -101,7 +101,7 @@
         font-style: italic;
         color: var(--muted);
         margin: 1rem 0 0;
-        max-width: 32ch;
+        max-width: 44ch;
         text-wrap: balance;
       }
 
@@ -156,6 +156,19 @@
         color: var(--muted);
       }
 
+      .endpoints a {
+        color: var(--ink);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: 0.2em;
+        transition: color 0.18s ease;
+      }
+
+      .endpoints a:hover,
+      .endpoints a:focus-visible {
+        color: var(--accent);
+      }
+
       /* --- footer --- */
 
       .tail {
@@ -169,18 +182,6 @@
         justify-content: space-between;
       }
 
-      .tail-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.7rem;
-      }
-
-      @media (min-width: 34rem) {
-        .tail-links {
-          align-items: flex-end;
-        }
-      }
 
       .venture-name {
         margin: 0;
@@ -198,12 +199,6 @@
         color: var(--muted);
       }
 
-      .affil {
-        margin: 0.9rem 0 0;
-        font-size: 0.875rem;
-        color: var(--muted);
-        opacity: 0.85;
-      }
 
       a.go {
         font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -222,16 +217,6 @@
         color: var(--accent);
       }
 
-      a.go .arrow {
-        display: inline-block;
-        transition: transform 0.18s ease;
-      }
-
-      a.go:hover .arrow,
-      a.go:focus-visible .arrow {
-        transform: translateX(3px);
-      }
-
       :focus-visible {
         outline: 2px solid var(--accent);
         outline-offset: 4px;
@@ -244,12 +229,8 @@
           stroke-dashoffset: -52;
         }
         a.go,
-        a.go .arrow {
+        .endpoints a {
           transition: none;
-        }
-        a.go:hover .arrow,
-        a.go:focus-visible .arrow {
-          transform: none;
         }
       }
     </style>
@@ -260,7 +241,7 @@
       <p class="eyebrow">coming soon</p>
 
       <h1>Chris Shi</h1>
-      <p class="standfirst">Working on biodefense and mechanistic interpretability.</p>
+      <p class="standfirst">Math &amp; computer engineering, Carnegie Mellon.</p>
 
       <figure class="transport">
         <svg viewBox="0 0 640 143" role="img" aria-labelledby="fig-title">
@@ -303,8 +284,8 @@
         </svg>
 
         <figcaption class="endpoints">
-          <span>czhs.github.io</span>
-          <span>chrisshi.com</span>
+          <a href="https://czhs.github.io/">czhs.github.io</a>
+          <span aria-current="page">chrisshi.com</span>
         </figcaption>
       </figure>
 
@@ -312,15 +293,9 @@
         <div class="venture">
           <p class="venture-name">Karst Biodefense</p>
           <p class="venture-line">Biodefense and mechanistic interpretability research.</p>
-          <p class="affil">Math &amp; computer engineering, Carnegie Mellon</p>
         </div>
 
-        <div class="tail-links">
-          <a class="go" href="mailto:research@chrisshi.com">research@chrisshi.com</a>
-          <a class="go" href="https://czhs.github.io/"
-            >Read the site at czhs.github.io <span class="arrow" aria-hidden="true">&rarr;</span></a
-          >
-        </div>
+        <a class="go" href="mailto:research@chrisshi.com">research@chrisshi.com</a>
       </div>
     </main>
   </body>
