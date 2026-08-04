@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chris Shi</title>
+    <meta name="description" content="Chris Shi — math and computer engineering at Carnegie Mellon. New site in progress; the current site is at czhs.github.io." />
+    <meta name="theme-color" content="#e7eaee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131a22" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:title" content="Chris Shi" />
+    <meta property="og:description" content="New address. The site hasn't moved in yet." />
+    <meta property="og:url" content="https://chrisshi.com/" />
+    <meta property="og:type" content="website" />
+
+    <link rel="canonical" href="https://chrisshi.com/" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 24 C 14 24, 18 8, 26 8' fill='none' stroke='%233e6390' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='6' cy='24' r='3' fill='%233e6390'/%3E%3Ccircle cx='26' cy='8' r='3' fill='%233e6390'/%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --paper: #e7eaee;
+        --ink: #1c2530;
+        --muted: #667487;
+        --line: #a9b5c4;
+        --accent: #3e6390;
+        --rule: rgba(28, 37, 48, 0.12);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #131a22;
+          --ink: #dde4ec;
+          --muted: #7c8b9e;
+          --line: #2e3b4b;
+          --accent: #7fa6d0;
+          --rule: rgba(221, 228, 236, 0.14);
+        }
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1.5rem;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Spectral", Georgia, "Times New Roman", serif;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      main {
+        width: 100%;
+        max-width: 40rem;
+      }
+
+      .eyebrow {
+        font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.22em;
+        text-transform: lowercase;
+        color: var(--muted);
+        margin: 0 0 1.5rem;
+      }
+
+      h1 {
+        font-size: clamp(2.75rem, 11vw, 4.5rem);
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        margin: 0;
+      }
+
+      .standfirst {
+        font-size: clamp(1.0625rem, 3.2vw, 1.25rem);
+        font-style: italic;
+        color: var(--muted);
+        margin: 1rem 0 0;
+        max-width: 26ch;
+      }
+
+      /* --- transport figure --- */
+
+      .transport {
+        margin: 3.25rem 0 0;
+      }
+
+      .transport svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+
+      .arc-base {
+        fill: none;
+        stroke: var(--line);
+        stroke-width: 1;
+        opacity: 0.5;
+      }
+
+      .arc-flow {
+        fill: none;
+        stroke: var(--accent);
+        stroke-width: 2.25;
+        stroke-linecap: round;
+        stroke-dasharray: 1.5 100;
+        animation: carry 7s linear infinite;
+      }
+
+      @keyframes carry {
+        from { stroke-dashoffset: 0; }
+        to   { stroke-dashoffset: -101.5; }
+      }
+
+      .node {
+        fill: var(--line);
+      }
+
+      .endpoints {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        /* align the labels under the node columns at x=56 and x=584 of 640 */
+        padding: 0 8.75%;
+        margin-top: 0.875rem;
+        font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.6875rem;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+      }
+
+      /* --- footer --- */
+
+      .tail {
+        margin-top: 3.25rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--rule);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+
+      .tail p {
+        margin: 0;
+        font-size: 0.9375rem;
+        color: var(--muted);
+      }
+
+      a.go {
+        font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: var(--ink);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: 0.15em;
+        white-space: nowrap;
+        transition: color 0.18s ease, border-color 0.18s ease;
+      }
+
+      a.go:hover,
+      a.go:focus-visible {
+        color: var(--accent);
+      }
+
+      a.go .arrow {
+        display: inline-block;
+        transition: transform 0.18s ease;
+      }
+
+      a.go:hover .arrow,
+      a.go:focus-visible .arrow {
+        transform: translateX(3px);
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+        border-radius: 2px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .arc-flow {
+          animation: none;
+          stroke-dashoffset: -52;
+        }
+        a.go,
+        a.go .arrow {
+          transition: none;
+        }
+        a.go:hover .arrow,
+        a.go:focus-visible .arrow {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <p class="eyebrow">coming soon</p>
+
+      <h1>Chris Shi</h1>
+      <p class="standfirst">New address. The site hasn&rsquo;t moved in yet.</p>
+
+      <figure class="transport">
+        <svg viewBox="0 0 640 143" role="img" aria-labelledby="fig-title">
+          <title id="fig-title">
+            Six curves carrying points from a spread-out source on the left, czhs.github.io, onto a
+            tighter cluster on the right, chrisshi.com.
+          </title>
+
+          <!--
+            A monotone transport plan: an evenly spread source measure pushed onto a
+            concentrated target. Order is preserved, so no two arcs cross.
+          -->
+          <path class="arc-base" d="M56,14 C250,14 390,45.6 584,45.6" />
+          <path class="arc-base" d="M56,37 C250,37 390,56 584,56" />
+          <path class="arc-base" d="M56,60 C250,60 390,66.3 584,66.3" />
+          <path class="arc-base" d="M56,83 C250,83 390,76.7 584,76.7" />
+          <path class="arc-base" d="M56,106 C250,106 390,87 584,87" />
+          <path class="arc-base" d="M56,129 C250,129 390,97.4 584,97.4" />
+
+          <path class="arc-flow" pathLength="100" style="animation-delay: 0s" d="M56,14 C250,14 390,45.6 584,45.6" />
+          <path class="arc-flow" pathLength="100" style="animation-delay: -1.17s" d="M56,37 C250,37 390,56 584,56" />
+          <path class="arc-flow" pathLength="100" style="animation-delay: -2.33s" d="M56,60 C250,60 390,66.3 584,66.3" />
+          <path class="arc-flow" pathLength="100" style="animation-delay: -3.5s" d="M56,83 C250,83 390,76.7 584,76.7" />
+          <path class="arc-flow" pathLength="100" style="animation-delay: -4.67s" d="M56,106 C250,106 390,87 584,87" />
+          <path class="arc-flow" pathLength="100" style="animation-delay: -5.83s" d="M56,129 C250,129 390,97.4 584,97.4" />
+
+          <circle class="node" cx="56" cy="14" r="2.5" />
+          <circle class="node" cx="56" cy="37" r="2.5" />
+          <circle class="node" cx="56" cy="60" r="2.5" />
+          <circle class="node" cx="56" cy="83" r="2.5" />
+          <circle class="node" cx="56" cy="106" r="2.5" />
+          <circle class="node" cx="56" cy="129" r="2.5" />
+
+          <circle class="node" cx="584" cy="45.6" r="2.5" />
+          <circle class="node" cx="584" cy="56" r="2.5" />
+          <circle class="node" cx="584" cy="66.3" r="2.5" />
+          <circle class="node" cx="584" cy="76.7" r="2.5" />
+          <circle class="node" cx="584" cy="87" r="2.5" />
+          <circle class="node" cx="584" cy="97.4" r="2.5" />
+        </svg>
+
+        <figcaption class="endpoints">
+          <span>czhs.github.io</span>
+          <span>chrisshi.com</span>
+        </figcaption>
+      </figure>
+
+      <div class="tail">
+        <p>Math &amp; computer engineering, Carnegie Mellon</p>
+        <a class="go" href="https://czhs.github.io/"
+          >Read the site at czhs.github.io <span class="arrow" aria-hidden="true">&rarr;</span></a
+        >
+      </div>
+    </main>
+  </body>
+</html>
