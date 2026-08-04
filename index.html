@@ -143,30 +143,8 @@
         fill: var(--line);
       }
 
-      .endpoints {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        /* align the labels under the node columns at x=56 and x=584 of 640 */
-        padding: 0 8.75%;
-        margin-top: 0.875rem;
-        font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-        font-size: 0.6875rem;
-        letter-spacing: 0.04em;
-        color: var(--muted);
-      }
-
-      .endpoints a {
-        color: var(--ink);
-        text-decoration: none;
-        border-bottom: 1px solid var(--accent);
-        padding-bottom: 0.2em;
-        transition: color 0.18s ease;
-      }
-
-      .endpoints a:hover,
-      .endpoints a:focus-visible {
-        color: var(--accent);
+      .site-link {
+        margin: 1.35rem 0 0;
       }
 
       /* --- footer --- */
@@ -228,8 +206,7 @@
           animation: none;
           stroke-dashoffset: -52;
         }
-        a.go,
-        .endpoints a {
+        a.go {
           transition: none;
         }
       }
@@ -242,12 +219,15 @@
 
       <h1>Chris Shi</h1>
       <p class="standfirst">Math &amp; computer engineering, Carnegie Mellon.</p>
+      <p class="site-link">
+        <a class="go" href="https://czhs.github.io/">czhs.github.io</a>
+      </p>
 
       <figure class="transport">
         <svg viewBox="0 0 640 143" role="img" aria-labelledby="fig-title">
           <title id="fig-title">
-            Six curves carrying points from a spread-out source on the left, czhs.github.io, onto a
-            tighter cluster on the right, chrisshi.com.
+            An optimal transport plan: six curves carrying an evenly spread set of points onto a
+            tighter cluster, without crossing.
           </title>
 
           <!--
@@ -283,10 +263,6 @@
           <circle class="node" cx="584" cy="97.4" r="2.5" />
         </svg>
 
-        <figcaption class="endpoints">
-          <a href="https://czhs.github.io/">czhs.github.io</a>
-          <span aria-current="page">chrisshi.com</span>
-        </figcaption>
       </figure>
 
       <div class="tail">
