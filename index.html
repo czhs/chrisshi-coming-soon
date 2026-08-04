@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chris Shi</title>
-    <meta name="description" content="Chris Shi — math and computer engineering at Carnegie Mellon, working on biodefense and mechanistic interpretability. Current site at czhs.github.io." />
+    <title>Chris Shi · Karst Biodefense</title>
+    <meta name="description" content="Karst Biodefense — biodefense research and infrastructure. Founded by Chris Shi, math and computer engineering at Carnegie Mellon. Contact research@chrisshi.com." />
     <meta name="theme-color" content="#e7eaee" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#131a22" media="(prefers-color-scheme: dark)" />
 
-    <meta property="og:title" content="Chris Shi" />
-    <meta property="og:description" content="Working on biodefense and mechanistic interpretability." />
+    <meta property="og:title" content="Chris Shi · Karst Biodefense" />
+    <meta property="og:description" content="Biodefense research and infrastructure." />
     <meta property="og:url" content="https://chrisshi.com/" />
     <meta property="og:type" content="website" />
 
@@ -164,15 +164,45 @@
         border-top: 1px solid var(--rule);
         display: flex;
         flex-wrap: wrap;
-        gap: 0.5rem 1.5rem;
-        align-items: baseline;
+        gap: 1.25rem 1.5rem;
+        align-items: flex-start;
         justify-content: space-between;
       }
 
-      .tail p {
+      .tail-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+      }
+
+      @media (min-width: 34rem) {
+        .tail-links {
+          align-items: flex-end;
+        }
+      }
+
+      .venture-name {
         margin: 0;
+        font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+
+      .venture-line {
+        margin: 0.4rem 0 0;
         font-size: 0.9375rem;
         color: var(--muted);
+      }
+
+      .affil {
+        margin: 0.9rem 0 0;
+        font-size: 0.875rem;
+        color: var(--muted);
+        opacity: 0.85;
       }
 
       a.go {
@@ -279,10 +309,18 @@
       </figure>
 
       <div class="tail">
-        <p>Math &amp; computer engineering, Carnegie Mellon</p>
-        <a class="go" href="https://czhs.github.io/"
-          >Read the site at czhs.github.io <span class="arrow" aria-hidden="true">&rarr;</span></a
-        >
+        <div class="venture">
+          <p class="venture-name">Karst Biodefense</p>
+          <p class="venture-line">Biodefense research and infrastructure.</p>
+          <p class="affil">Math &amp; computer engineering, Carnegie Mellon</p>
+        </div>
+
+        <div class="tail-links">
+          <a class="go" href="mailto:research@chrisshi.com">research@chrisshi.com</a>
+          <a class="go" href="https://czhs.github.io/"
+            >Read the site at czhs.github.io <span class="arrow" aria-hidden="true">&rarr;</span></a
+          >
+        </div>
       </div>
     </main>
   </body>
